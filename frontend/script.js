@@ -7,3 +7,17 @@ function getQuote() {
       document.getElementById("quote").innerText = data.text;
     });
 }
+
+function addQuote() {
+  let text = document.getElementById("newQuote").value;
+
+  fetch("http://localhost:3000/quotes", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({ text: text })
+  });
+
+  document.getElementById("newQuote").value = "";
+}

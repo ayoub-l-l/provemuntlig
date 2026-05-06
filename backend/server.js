@@ -17,13 +17,13 @@ app.get("/quotes", function(req, res) {
   res.json(quotes);
 });
 
-// tilfeldig
+// random quote
 app.get("/quotes/random", function(req, res) {
   let randomIndex = Math.floor(Math.random() * quotes.length);
   res.json(quotes[randomIndex]);
 });
 
-// legg til nytt sitat
+// legg til ny quote
 app.post("/quotes", function(req, res) {
   let newQuote = {
     id: quotes.length + 1,
