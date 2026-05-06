@@ -28,5 +28,5 @@ app.get("/quotes/random", function(req, res) {
 });
 
 app.listen(3000, function() {
-  console.log("Server kjører på port 3000");
+  console.log("http://localhost:3000/quotes/random");
 });
