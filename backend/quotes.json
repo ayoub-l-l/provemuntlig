@@ -1,5 +1,22 @@
 [
-  { "id": 1, "text": "Believe in yourself" },
-  { "id": 2, "text": "Push yourself, because no one else will" },
-  { "id": 3, "text": "Dream big and dare to fail" }
+  {
+    "id": 1,
+    "text": "Believe in yourself"
+  },
+  {
+    "id": 2,
+    "text": "Push yourself, because no one else will"
+  },
+  {
+    "id": 3,
+    "text": "Dream big and dare to fail"
+  },
+  {
+    "id": 4,
+    "text": "good luck"
+  },
+  {
+    "id": 5,
+    "text": "take it easy "
+  }
 ]

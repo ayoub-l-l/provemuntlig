@@ -11,6 +11,10 @@ function getQuote() {
 function addQuote() {
   let text = document.getElementById("newQuote").value;
 
+  if (text.trim() === "") {
+    return;
+  }
+
   fetch("http://localhost:3000/quotes", {
     method: "POST",
     headers: {

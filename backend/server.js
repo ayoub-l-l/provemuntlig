@@ -4,7 +4,7 @@ let app = express();
 
 app.use(express.json());
 
-// CORS FIX
+// CORS
 app.use(function(req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
   res.header("Access-Control-Allow-Headers", "Content-Type");
@@ -12,6 +12,7 @@ app.use(function(req, res, next) {
   next();
 });
 
+// les quotes fra fil
 let quotes = JSON.parse(fs.readFileSync("quotes.json"));
 
 // hent alle
@@ -19,14 +20,18 @@ app.get("/quotes", function(req, res) {
   res.json(quotes);
 });
 
-// tilfeldig
+// tilfeldig quote
 app.get("/quotes/random", function(req, res) {
   let randomIndex = Math.floor(Math.random() * quotes.length);
   res.json(quotes[randomIndex]);
 });
 
-// legg til
+// legg til quote (MED VALIDERING)
 app.post("/quotes", function(req, res) {
+  if (!req.body.text || req.body.text.trim() === "") {
+    return res.json({ error: "Text is required" });
+  }
+
   let newQuote = {
     id: quotes.length + 1,
     text: req.body.text
