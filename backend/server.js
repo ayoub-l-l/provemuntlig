@@ -39,6 +39,6 @@ app.post("/quotes", function(req, res) {
   res.json(newQuote);
 });
 
-app.listen(PORT, () => {
+app.listen(PORT, "0.0.0.0", () => {
   console.log(`http://192.168.20.72:${PORT}`);
 });
