@@ -1,7 +1,7 @@
 let express = require("express");
 let fs = require("fs");
 let app = express();
-
+let PORT = process.env.PORT || 3000;
 app.use(express.json());
 
 app.use(function(req, res, next) {
@@ -39,6 +39,6 @@ app.post("/quotes", function(req, res) {
   res.json(newQuote);
 });
 
-app.listen(3000, "192.168.20.72", function() {
-  console.log("Server kjører på LAN");
+app.listen(PORT, () => {
+  console.log(`http://192.168.20.72:${PORT}`);
 });
