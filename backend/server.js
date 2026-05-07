@@ -39,6 +39,6 @@ app.post("/quotes", function(req, res) {
   res.json(newQuote);
 });
 
-app.listen(3000, function() {
-  console.log("http://localhost:3000/quotes");
+app.listen(3000, "192.168.20.72", function() {
+  console.log("Server kjører på LAN");
 });
