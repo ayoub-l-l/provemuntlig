@@ -11,6 +11,10 @@ app.get("/quotes", function(req, res) {
   res.json(quotes);
 });
 
+app.get("/quotes/random", function(req, res) {
+  let randomIndex = Math.floor(Math.random() * quotes.length);
+  res.json(quotes[randomIndex]);
+});
 
 
 app.listen(PORT, "0.0.0.0", function() {
