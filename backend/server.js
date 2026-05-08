@@ -1,6 +1,11 @@
 let express = require("express");
 let fs = require("fs");
+let cors = require("cors");
+
 let app = express();
+
+app.use(cors());
+app.use(express.json());
 
 let PORT;
 
@@ -9,23 +14,19 @@ if (process.env.PORT) {
 } else {
   PORT = 3000;
 }
-    
-            
-
-app.use(express.json());
 
 let quotes = JSON.parse(fs.readFileSync("quotes.json"));
 
-app.get("/quotes", function(req, res) {
+app.get("/quotes", function (req, res) {
   res.json(quotes);
 });
 
-app.get("/quotes/random", function(req, res) {
+app.get("/quotes/random", function (req, res) {
   let randomIndex = Math.floor(Math.random() * quotes.length);
   res.json(quotes[randomIndex]);
 });
 
-app.post("/quotes", function(req, res) {
+app.post("/quotes", function (req, res) {
 
   let textMissing = false;
 
@@ -37,7 +38,7 @@ app.post("/quotes", function(req, res) {
     }
   }
 
-  if (textMissing) {
+  if (textMissing === true) {
     return res.json({ error: "Text is required" });
   }
 
@@ -53,6 +54,6 @@ app.post("/quotes", function(req, res) {
   res.json(newQuote);
 });
 
-app.listen(PORT, function() {
-  console.log("Server kjører på http://192.168.20.72:" + PORT);
+app.listen(PORT, function () {
+  console.log("Server kjører på http://localhost:" + PORT);
 });
