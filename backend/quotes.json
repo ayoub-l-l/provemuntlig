@@ -1,26 +1,42 @@
 [
   {
     "id": 1,
-    "text": "Believe in yourself"
+    "text": "Life is like riding a bicycle. To keep your balance, you must keep moving. - Albert Einstein"
   },
   {
     "id": 2,
-    "text": "Push yourself, because no one else will"
+    "text": "It always seems impossible until it's done. - Nelson Mandela"
   },
   {
     "id": 3,
-    "text": "Dream big and dare to fail"
+    "text": "Be yourself; everyone else is already taken. - Oscar Wilde"
   },
   {
     "id": 4,
-    "text": "good luck"
+    "text": "The only way to do great work is to love what you do. - Steve Jobs"
   },
   {
     "id": 5,
-    "text": "take it easy "
+    "text": "In the end, it's not the years in your life that count. It's the life in your years. - Abraham Lincoln"
   },
   {
     "id": 6,
-    "text": "good luck"
+    "text": "Nothing in life is to be feared, it is only to be understood. - Marie Curie"
+  },
+  {
+    "id": 7,
+    "text": "The way to get started is to quit talking and begin doing. - Walt Disney"
+  },
+  {
+    "id": 8,
+    "text": "It does not matter how slowly you go as long as you do not stop. - Confucius"
+  },
+  {
+    "id": 9,
+    "text": "Life is either a daring adventure or nothing at all. - Helen Keller"
+  },
+  {
+    "id": 10,
+    "text": "You will face many defeats in life, but never let yourself be defeated. - Maya Angelou"
   }
 ]
