@@ -9,6 +9,8 @@ if (process.env.PORT) {
 } else {
   PORT = 3000;
 }
+    
+            
 
 app.use(express.json());
 
@@ -51,6 +53,6 @@ app.post("/quotes", function(req, res) {
   res.json(newQuote);
 });
 
-app.listen(PORT, "0.0.0.0", function() {
+app.listen(PORT, function() {
   console.log("Server kjører på http://192.168.20.72:" + PORT);
 });
