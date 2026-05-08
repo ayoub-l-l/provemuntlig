@@ -7,6 +7,10 @@ let quotes = JSON.parse(fs.readFileSync("quotes.json"));
 
 app.use(express.json());
 
+app.get("/quotes", function(req, res) {
+  res.json(quotes);
+});
+
 
 
 app.listen(PORT, "0.0.0.0", function() {
