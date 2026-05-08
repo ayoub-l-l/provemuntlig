@@ -6,12 +6,6 @@ let PORT = process.env.PORT || 3000;
 
 app.use(express.json());
 
-app.use(function(req, res, next) {
-  res.header("Access-Control-Allow-Origin", "*");
-  res.header("Access-Control-Allow-Headers", "Content-Type");
-  res.header("Access-Control-Allow-Methods", "GET, POST");
-  next();
-});
 
 let quotes = JSON.parse(fs.readFileSync("quotes.json"));
 
