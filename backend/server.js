@@ -55,5 +55,5 @@ app.post("/quotes", function (req, res) {
 });
 
 app.listen(PORT, function () {
-  console.log("Server kjører på http://localhost:" + PORT);
+  console.log("Server kjører på http://192.168.20.72:" + PORT);
 });
