@@ -1,5 +1,5 @@
 function getQuote() {
-  fetch("http://localhost:3000/quotes/random")
+  fetch("http://192.168.20.72:3000/quotes/random")
     .then(function (res) {
       return res.json();
     })
@@ -18,7 +18,7 @@ function addQuote() {
     return;
   }
 
-  fetch("http://localhost:3000/quotes", {
+  fetch("http://192.168.20.72:3000/quotes", {
     method: "POST",
     headers: {
       "Content-Type": "application/json"
