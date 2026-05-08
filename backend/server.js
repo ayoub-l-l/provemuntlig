@@ -2,10 +2,15 @@ let express = require("express");
 let fs = require("fs");
 let app = express();
 
-let PORT = process.env.PORT || 3000;
+let PORT;
+
+if (process.env.PORT) {
+  PORT = process.env.PORT;
+} else {
+  PORT = 3000;
+}
 
 app.use(express.json());
-
 
 let quotes = JSON.parse(fs.readFileSync("quotes.json"));
 
@@ -19,7 +24,18 @@ app.get("/quotes/random", function(req, res) {
 });
 
 app.post("/quotes", function(req, res) {
-  if (!req.body.text || req.body.text.trim() === "") {
+
+  let textMissing = false;
+
+  if (!req.body.text) {
+    textMissing = true;
+  } else {
+    if (req.body.text.trim() === "") {
+      textMissing = true;
+    }
+  }
+
+  if (textMissing) {
     return res.json({ error: "Text is required" });
   }
 
@@ -36,5 +52,5 @@ app.post("/quotes", function(req, res) {
 });
 
 app.listen(PORT, "0.0.0.0", function() {
-  console.log(`Server kjører på http://192.168.20.72:${PORT}`);
+  console.log("Server kjører på http://192.168.20.72:" + PORT);
 });
